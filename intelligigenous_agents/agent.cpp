@@ -3,6 +3,7 @@ using namespace std;
 
 int main(){
     pair<int, int> p[8]={{1,1},{1,0},{0,1},{0,0},{1,1},{1,0},{0,1},{0,0}};
+    int pontuacao=0;
     cout<<"Casos de teste"<<endl;
     for(int i=0; i<8; i++){
         cout<<"Caso de teste: "<<i<<endl;
@@ -11,8 +12,10 @@ int main(){
             if(p[i].first == 1){
                 cout<<"Suck"<<endl;
                 cout<<"Move Right"<<endl;
+                pontuacao++;
                 if(p[i].second == 1){
                     cout<<"Suck"<<endl;
+                    pontuacao++;
                 }else{
                     cout<<"Clean"<<endl;
                 }
@@ -21,6 +24,7 @@ int main(){
                 cout<<"Move Right"<<endl;
                 if(p[i].second == 1){
                     cout<<"Suck"<<endl;
+                    pontuacao++;
                 }else{
                     cout<<"Clean"<<endl;
                 }
@@ -29,8 +33,10 @@ int main(){
             if(p[i].second == 1){
                 cout<<"Suck"<<endl;
                 cout<<"Move Left"<<endl;
+                pontuacao++;
                 if(p[i].first == 1){
                     cout<<"Suck"<<endl;
+                    pontuacao++;
                 }else{
                     cout<<"Clean"<<endl;
                 }
@@ -39,11 +45,15 @@ int main(){
                 cout<<"Move Left"<<endl;
                 if(p[i].second == 1){
                     cout<<"Suck"<<endl;
+                    pontuacao++;
                 }else{
                     cout<<"Clean"<<endl;
                 }
             }
         }
+        cout<<endl;
+        cout<<"Pontuação: "<<pontuacao<<endl;
+        cout<<endl;
     }
     return 0;
 }
